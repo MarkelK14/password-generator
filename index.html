@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css"> 
-    
+    <script src="script/script.js"></script>
 </head>
 <body>
     <main class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
@@ -17,47 +17,57 @@
                 <p class="text-gray-200/80 w-96">testing-password</p>
             </div>
 
-            <ul class="mt-8 text-left g-8">
-                <li>
+            <ul class="mt-8 text-left">
+                <li class="mb-4">
                     <div class="flex items-center mb-5 cursor-pointer gap-2 justify-center">
                         <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Characters</label>
                         <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                        <input type="text" name="length" id="length" class="w-16 h-8 text-center bg-gray-800 border border-gray-700 rounded" placeholder="50">
+                        <input type="text" name="length" id="length" class="w-16 h-8 text-center bg-gray-800 border border-gray-700 rounded" placeholder="12" value="12" min="1" max="100">
                     </div>
                     
                 </li>
-                <li>
-                    <div class="inline-flex items-center mb-5 cursor-pointer">
-                        <input type="checkbox" id="uppercase" class="sr-only peer">
-                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Uppercase</span>
+                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                    <div class="relative inline-block w-11 h-5">
+                      <input id="uppercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                      <label for="uppercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                      </label>
                     </div>
+                   <label for="uppercase" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                        Uppercase
+                    </label>
                 </li>
-                <li>
-                    <div class="inline-flex items-center mb-5 cursor-pointer">
-                        <input type="checkbox" id="lowercase" class="sr-only peer">
-                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Lowercase</span>
+                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                    <div class="relative inline-block w-11 h-5">
+                      <input id="lowercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                      <label for="lowercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                      </label>
                     </div>
+                   <label for="lowercase" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                        Lowercase
+                    </label>
                 </li>
-                <li>
-                    <div class="inline-flex items-center mb-5 cursor-pointer">
-                        <input type="checkbox" id="numbers" class="sr-only peer">
-                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Numbers</span>
+                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                    <div class="relative inline-block w-11 h-5">
+                      <input id="numbers" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                      <label for="numbers" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                      </label>
                     </div>
+                   <label for="numbers" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                        Numbers
+                    </label>
                 </li>
-                <li>
-                    <div class="inline-flex items-center mb-5 cursor-pointer">
-                        <input type="checkbox" id="symbols" class="sr-only peer">
-                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Symbols</span>
+                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                    <div class="relative inline-block w-11 h-5">
+                      <input id="specialChars" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                      <label for="specialChars" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                      </label>
                     </div>
+                   <label for="specialChars" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                        Special characters
+                    </label>
                 </li>
             </ul>
         </div>
-    </main>    
-
-    <script src="script/script.js"></script>
+    </main>
 </body>
 </html>
