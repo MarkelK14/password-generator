@@ -7,67 +7,70 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css"> 
-    <script src="script/script.js"></script>
+    <script src="script/theme-switching.js"></script>
 </head>
 <body>
-    <main class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
-        <div class="text-white bg-gray-900 border border-gray-700 rounded shadow-xl p-8 text-center">
-            <h1 class="text-xl">Password Generator</h1>
-            <div class="mt-4 mb-4border border-gray-700 bg-gray-800 rounded p-2 w-full text-center">
-                <p class="text-gray-200/80 w-96">testing-password</p>
+    <main class="bg-gray-100 dark:bg-gray-900 text-white min-h-screen flex items-center justify-center">
+        <div class="bg-gray-100 dark:bg-gray-900 border border-gray-700 rounded shadow-xl p-10">
+            <h1 class="text-5xl text-blue-600 dark:text-blue-400 mb-10">Password Generator</h1>
+            
+            <p class="text-lg text-gray-700 dark:text-white/70 align-left">Generated password:</p>
+            <div class="mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center">
+                <p class="text-gray-700 dark:text-gray-200/80 w-96 font-mono">testing-password</p>
             </div>
 
             <ul class="mt-8 text-left">
                 <li class="mb-4">
                     <div class="flex items-center mb-5 cursor-pointer gap-2 justify-center">
-                        <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Characters</label>
-                        <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                        <input type="text" name="length" id="length" class="w-16 h-8 text-center bg-gray-800 border border-gray-700 rounded" placeholder="12" value="12" min="1" max="100">
+                        <label for="default-range" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Characters</label>
+                        <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        <input type="text" name="length" id="length" class="w-16 h-8 text-center bg-gray-200 dark:bg-gray-800 border border-gray-700 rounded text-gray-700 dark:text-gray-200/80" placeholder="12" value="12" min="1" max="100">
                     </div>
                     
                 </li>
-                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                      <input id="uppercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
-                      <label for="uppercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                        <input id="uppercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <label for="uppercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
-                   <label for="uppercase" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                   <label for="uppercase" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
                         Uppercase
                     </label>
                 </li>
-                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                      <input id="lowercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
-                      <label for="lowercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                        <input id="lowercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <label for="lowercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
-                   <label for="lowercase" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                   <label for="lowercase" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
                         Lowercase
                     </label>
                 </li>
-                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                      <input id="numbers" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
-                      <label for="numbers" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                        <input id="numbers" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <label for="numbers" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
-                   <label for="numbers" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                   <label for="numbers" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
                         Numbers
                     </label>
                 </li>
-                <li class="flex items-center mb-5 cursor-pointer gap-2">
+                <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                      <input id="specialChars" type="checkbox" class="peer appearance-none w-11 h-6 bg-slate-100 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
-                      <label for="specialChars" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                        <input id="specialChar" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <label for="specialChar" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
-                   <label for="specialChars" class="text-gray-900 dark:text-gray-300 text-md cursor-pointer">
+                   <label for="specialChar" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
                         Special characters
                     </label>
                 </li>
             </ul>
         </div>
     </main>
+    <script src="script/theme-switching.js"></script>
 </body>
 </html>
