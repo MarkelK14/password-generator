@@ -22,15 +22,15 @@
             <ul class="mt-8 text-left">
                 <li class="mb-4">
                     <div class="flex items-center mb-5 cursor-pointer gap-2 justify-center">
-                        <label for="default-range" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Characters</label>
-                        <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                        <input type="text" name="length" id="length" class="w-16 h-8 text-center bg-gray-200 dark:bg-gray-800 border border-gray-700 rounded text-gray-700 dark:text-gray-200/80" placeholder="12" value="12" min="1" max="100">
+                        <label for="default-range" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Characters:</label>
+                        <input id="password-length-range" type="range" value="50" class="w-full h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        <input type="text" name="password-length-txt" id="password-length-txt" class="w-16 h-8 text-center bg-gray-200 dark:bg-gray-800 border border-gray-700 rounded text-gray-700 dark:text-gray-200/80" placeholder="12" value="12" min="1" max="100">
                     </div>
                     
                 </li>
                 <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                        <input id="uppercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <input id="uppercase" type="checkbox" onchange="generatePassword()" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
                         <label for="uppercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
@@ -40,7 +40,7 @@
                 </li>
                 <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                        <input id="lowercase" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <input id="lowercase" type="checkbox" onchange="generatePassword()" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
                         <label for="lowercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
@@ -50,7 +50,7 @@
                 </li>
                 <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                        <input id="numbers" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <input id="numbers" type="checkbox" onchange="generatePassword()" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
                         <label for="numbers" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
@@ -60,17 +60,17 @@
                 </li>
                 <li class="flex items-center mb-5 cursor-pointer gap-4">
                     <div class="relative inline-block w-11 h-5">
-                        <input id="specialChar" type="checkbox" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
-                        <label for="specialChar" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                        <input id="special-characters" type="checkbox" onchange="generatePassword()" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
+                        <label for="special-characters" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
                     </div>
-                   <label for="specialChar" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
+                   <label for="special-characters" class="text-gray-900 dark:text-gray-300 text-lg cursor-pointer">
                         Special characters
                     </label>
                 </li>
             </ul>
         </div>
     </main>
-    <script src="script/theme-switching.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
