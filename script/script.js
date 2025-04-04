@@ -51,41 +51,41 @@ const generatePassword = (passwordLength, passwordOptions, passwordFunctions) =>
     if (!passwordLength) {
         return;
     }
-    let optionsCount = 0;
+    let selectedOptionsCount = 0;
     for (let [key, value] of passwordOptions) {
         if (value) {
-            optionsCount++;
+            selectedOptionsCount++;
         }
     }
     
-    if (optionsCount === 0) {
+    if (selectedOptionsCount === 0) {
         return;
     }
 
     let passwordFunctionsMap = new Map();
     let index = 0;
-    let optionsSkippedIndex = [];
+    let skippedOtionsIndexes = [];
     for (let [key, value] of passwordOptions) {
         if (value) {
             passwordFunctionsMap.set(key, passwordFunctions[index]);
         } else {
-            optionsSkippedIndex.push(index);
+            skippedOtionsIndexes.push(index);
         }
         index++;
     }
     
-    const passwordOptionKeys = ['uppercaseLetters', 'lowercaseLetters', 'numbers', 'symbols'];
-    const ultimatePasswordOptionKeys = [];
-    passwordOptionKeys.forEach( (element, index) => {
-        if (!optionsSkippedIndex.includes(index)) {
-            ultimatePasswordOptionKeys.push(element);
+    const passwordPropertiesKeys = ['uppercaseLetters', 'lowercaseLetters', 'numbers', 'symbols'];
+    const selectedPasswordOptionKeys = [];
+    passwordPropertiesKeys.forEach( (element, index) => {
+        if (!skippedOtionsIndexes.includes(index)) {
+            selectedPasswordOptionKeys.push(element);
         }
     });
 
     const passwordArray = [];
     for (let i = 0; i < passwordLength; i++) {
-        const randomOption = Math.floor(Math.random() * ultimatePasswordOptionKeys.length);
-        const passwordSpecificFunction = passwordFunctionsMap.get(ultimatePasswordOptionKeys[randomOption]);
+        const randomOption = Math.floor(Math.random() * selectedPasswordOptionKeys.length);
+        const passwordSpecificFunction = passwordFunctionsMap.get(selectedPasswordOptionKeys[randomOption]);
         passwordArray.push(passwordSpecificFunction());
     }
     generatedPassword.value = passwordArray.join('');
@@ -115,16 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const checkedLettersOption = () => {
-    console.log('pre-uppercaseChecked', uppercase.checked);
-    console.log('pre-lowercaseChecked', lowercase.checked);
-    console.log('pre-numbers', lowercase.checked);
-    console.log('pre-symbols', lowercase.checked);
-
+    // Check if at least one option is selected
     if (!uppercase.checked && !lowercase.checked && !numbers.checked && !symbols.checked) {
         lowercase.checked = true;
+        generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions);
     }
-    console.log('post-uppercaseChecked', uppercase.checked);
-    console.log('post-lowercaseChecked', lowercase.checked);
-    console.log('post-numbers', lowercase.checked);
-    console.log('post-symbols', lowercase.checked);
 }
