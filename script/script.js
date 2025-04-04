@@ -6,8 +6,13 @@ const lowercase = document.getElementById('lowercase');
 const numbers = document.getElementById('numbers');
 const symbols = document.getElementById('special-characters');
 
+const btnGenerate = document.getElementById('btnGenerate');
+const btnCopy = document.getElementById('btnCopy');
+
 const state = document.querySelectorAll('.x-wrapper__option input');
 const form = document.querySelector('#form')
+
+let tooltip
 
 let passwordProperties = new Map();
 
@@ -99,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     numbers.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     symbols.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     btnGenerate.addEventListener('click', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
+    btnCopy.addEventListener('click', () => copyToClipboard());
+    
     uppercase.addEventListener('input', () =>  checkedLettersOption());
     lowercase.addEventListener('input', () =>  checkedLettersOption());
     numbers.addEventListener('input', () =>  checkedLettersOption());
@@ -119,4 +126,26 @@ const checkedLettersOption = () => {
         lowercase.checked = true;
         generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions);
     }
+}
+
+const copyToClipboard = () => {
+    navigator.clipboard.writeText(generatedPassword.value.toString());
+    createTooltip();
+}
+
+const createTooltip = () => {
+    if(tooltip){
+        return
+    }
+    
+    tooltip = document.createElement('span')
+    tooltip.classList.add('tooltip_copied')
+    tooltip.innerText = 'Copied'
+    const wrapperInput = document.querySelector('.wrapper_button')
+    wrapperInput.appendChild(tooltip)
+    
+    setTimeout(() => {
+      tooltip.remove()
+      tooltip = false
+    }, 1000)
 }
