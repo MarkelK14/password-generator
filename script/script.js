@@ -89,6 +89,7 @@ const generatePassword = (passwordLength, passwordOptions, passwordFunctions) =>
         passwordArray.push(passwordSpecificFunction());
     }
     generatedPassword.value = passwordArray.join('');
+    passwordLengthText.innerText = passwordArray.length;
 };
 
 
