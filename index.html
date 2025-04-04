@@ -16,7 +16,14 @@
             <h1 class="text-5xl text-blue-600 dark:text-blue-400 mb-10">Password Generator</h1>
             
             <label for="generated-password" class="text-lg text-gray-700 dark:text-white/70 align-left">Generated password:</p>
-            <input type="text" disabled id="generated-password" class="mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center text-gray-700 dark:text-gray-200/80 font-mono cursor-text">
+            <!-- <input type="text" disabled id="generated-password" class="mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center text-gray-700 dark:text-gray-200/80 font-mono cursor-text"> -->
+            <div class="flex items-center justify-between mb-5 gap-2">
+                <input type="text" disabled id="generated-password" class="h-12 mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center text-gray-700 dark:text-gray-200/80 font-mono cursor-text text-sm md:text-lg">
+                <button id="btnCopy" class="h-12 text-white focus:ring-3 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-auto">
+                    Copy
+                </button>
+            </div>
+
 
             <ul class="mt-8 text-left">
                 <li class="mb-4">
