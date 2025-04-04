@@ -35,7 +35,7 @@ const generateRandomLowercase = (e) => {
 }
 
 const generateRandomSymbol = (e) => {
-    const symbols = '!@#$%^&*()_+[]{}|;:,.<>?';
+    const symbols = '!@#$%^&*()_-+[]{}|;:,.<>?';
     const randomNumber = Math.floor(Math.random() * symbols.length);
     return symbols[randomNumber];
 }
