@@ -103,23 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     lowercase.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     numbers.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     symbols.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
+    btnGenerate.addEventListener('click', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
+    
+    // Prevent form submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+    // Set default password length text
     generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions);
 })
 
-const setLengthFromRange = () => {
-    passwordLengthText.innerHTML = passwordLengthRange.value;
-}
-
-const setLengthFromInput = () => {
-    passwordLengthRange.value = passwordLengthText.value;
-}
-
-// Generate password button
-btnGenerate.onclick = (e) => {
-    generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions);
-}
-
-// Prevent form submission
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
