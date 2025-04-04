@@ -16,19 +16,19 @@
             <h1 class="text-5xl text-blue-600 dark:text-blue-400 mb-10">Password Generator</h1>
             
             <label for="generated-password" class="text-lg text-gray-700 dark:text-white/70 align-left">Generated password:</p>
-            <input type="text" disabled id="generated-password" class="mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center text-gray-700 dark:text-gray-200/80 font-mono cursor-text">
+            <input type="text" disabled id="generated-password" class="mt-4 mb-4 border border-gray-700 bg-gray-200 dark:bg-gray-800 rounded p-2 w-full text-center text-gray-700 dark:text-gray-200/80 font-mono cursor-text text-sm md:text-lg">
 
             <ul class="mt-8 text-left">
                 <li class="mb-4">
-                    <div class="flex items-center mb-5 cursor-pointer gap-2 justify-center">
-                        <label for="default-range" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Characters:</label>
+                    <div class="flex items-center mb-5 cursor-pointer gap-2">
+                        <label for="password-length-range" class="text-lg font-medium text-gray-900 dark:text-white">Characters:</label>
                         <input id="password-length-range" type="range" min="8" max="30" value="20" step="1" class="w-full h-2 bg-gray-400 rounded-lg cursor-pointer dark:bg-gray-700">
-                        <label for="default-range" id="password-length-txt" class="block mb-2 text-lg font-medium text-blue-600 dark:text-blue-400"></label>
+                        <span id="password-length-txt" class="text-lg font-medium text-blue-600 dark:text-blue-400">20</span>
                     </div>
                     
                 </li>
                 <li class="flex items-center mb-5 cursor-pointer gap-4 x-wrapper__option">
-                    <div class="relative inline-block w-11 h-5">
+                    <div class="relative inline-block w-11 h-5 justify-center">
                         <input id="uppercase" type="checkbox" onchange="generatePassword()" class="peer appearance-none w-11 h-6 bg-gray-400 rounded-full checked:bg-blue-700 cursor-pointer transition-colors duration-300" />
                         <label for="uppercase" class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border-2 border-white dark:border-gray-700 shadow-md transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
                       </label>
