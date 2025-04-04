@@ -37,3 +37,9 @@
     background: #2563EB;
     transform: rotate(45deg);
 }
+
+@media (max-width: 768px) {
+    .tooltip_copied {
+        transform: translateY(-50px) translateX(-125px);
+    }
+}
