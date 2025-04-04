@@ -12,6 +12,8 @@ const btnCopy = document.getElementById('btnCopy');
 const state = document.querySelectorAll('.x-wrapper__option input');
 const form = document.querySelector('#form')
 
+let tooltip
+
 let passwordProperties = new Map();
 
 // Set selected password properties
@@ -128,4 +130,22 @@ const checkedLettersOption = () => {
 
 const copyToClipboard = () => {
     navigator.clipboard.writeText(generatedPassword.value.toString());
+    createTooltip();
+}
+
+const createTooltip = () => {
+    if(tooltip){
+        return
+    }
+    
+    tooltip = document.createElement('span')
+    tooltip.classList.add('tooltip_copied')
+    tooltip.innerText = 'Copied'
+    const wrapperInput = document.querySelector('.wrapper_button')
+    wrapperInput.appendChild(tooltip)
+    
+    setTimeout(() => {
+      tooltip.remove()
+      tooltip = false
+    }, 1000)
 }
