@@ -46,8 +46,6 @@ const passwordFunctions = [generateRandomUppercase, generateRandomLowercase, gen
 
 const generatePassword = (passwordLength, passwordOptions, passwordFunctions) => {
 
-    console.log('passwordLength', passwordLength);
-
     setPasswordProperties();
 
     if (!passwordLength) {
@@ -91,9 +89,6 @@ const generatePassword = (passwordLength, passwordOptions, passwordFunctions) =>
         passwordArray.push(passwordSpecificFunction());
     }
     generatedPassword.value = passwordArray.join('');
-    console.log('passwordArray', passwordArray)
-    console.log('passwordArray.join()', passwordArray.join(''));
-    console.log('generatedPassword.innerHTML', generatedPassword.innerHTML);
 };
 
 
@@ -104,12 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
     numbers.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     symbols.addEventListener('input', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
     btnGenerate.addEventListener('click', () => generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions));
-    
+    uppercase.addEventListener('input', () =>  checkedLettersOption());
+    lowercase.addEventListener('input', () =>  checkedLettersOption());
+    numbers.addEventListener('input', () =>  checkedLettersOption());
+    symbols.addEventListener('input', () =>  checkedLettersOption());
+
     // Prevent form submission
     form.addEventListener('submit', (e) => {
         e.preventDefault()
     })
     // Set default password length text
+    lowercase.checked = true;
     generatePassword(passwordLengthRange.value, passwordProperties, passwordFunctions);
 })
 
+const checkedLettersOption = () => {
+    console.log('pre-uppercaseChecked', uppercase.checked);
+    console.log('pre-lowercaseChecked', lowercase.checked);
+    console.log('pre-numbers', lowercase.checked);
+    console.log('pre-symbols', lowercase.checked);
+
+    if (!uppercase.checked && !lowercase.checked && !numbers.checked && !symbols.checked) {
+        lowercase.checked = true;
+    }
+    console.log('post-uppercaseChecked', uppercase.checked);
+    console.log('post-lowercaseChecked', lowercase.checked);
+    console.log('post-numbers', lowercase.checked);
+    console.log('post-symbols', lowercase.checked);
+}
