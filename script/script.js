@@ -21,8 +21,7 @@ const setPasswordProperties = () => {
 
 // Generate random numbers, uppercase, lowercase and symbols
 const generateRandomNumber = (e) => {
-    const randomNumber = Math.floor(Math.random() * 26) + 97
-    return String.fromCharCode(randomNumber);
+    return Math.floor(Math.random() * 10).toString();
 }
 
 const generateRandomUppercase = (e) => {
