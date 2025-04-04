@@ -1,4 +1,4 @@
-const passwordLength = document.getElementById('password-length-txt'); // Ensure this is an <input> element
+const passwordLength = document.getElementById('password-length-range'); // Ensure this is an <input> element
 const uppercase = document.getElementById('uppercase');
 const lowercase = document.getElementById('lowercase');
 const numbers = document.getElementById('numbers');
@@ -29,6 +29,7 @@ const generatePassword = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     generatePassword();
+    passwordLength.addEventListener('input', () => setLength());
     uppercase.addEventListener('change', () => randomNumber());
     console.log('passwordLength', passwordLength.value);
     console.log('DOMContentLoaded event fired');
@@ -38,4 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const randomLetter = (e) => {
     const randomNumber = Math.floor(Math.random() * 26) + 97
     console.log(String.fromCharCode(randomNumber));
+}
+
+const setLength = (e) => {
+    console.log('setLength event fired');
 }
